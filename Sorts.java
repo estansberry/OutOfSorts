@@ -13,8 +13,7 @@ public class Sorts{
           data[i + 1] = current;
         }
       }
-    }System.out.print("Final array: ");
-    System.out.println(toString(data));
+    }
     return(data);
   }
   public static boolean sorted(int[] data){
@@ -25,10 +24,14 @@ public class Sorts{
     }return(true);
   }
   public static String toString(int[] data){
+    if(data.length == 0){
+      return("[]");
+    }
     String str1 = "[";
-    for(int i = 0; i < data.length; i ++){
+    for(int i = 0; i < data.length - 1; i ++){
       str1 = str1 + data[i] + ", ";
-    }str1 = str1 + "]";
+    }
+    str1 = str1 + data[data.length - 1] + "]";
     return(str1);
   }
 }
