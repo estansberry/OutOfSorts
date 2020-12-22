@@ -3,12 +3,12 @@ import java.util.concurrent.ThreadLocalRandom;
 
 public class SortTester{
   public static void main(String args[]){
-    System.out.println(Sorts.sorted(Sorts.bubbleSort(RandomtoArray(10))));
-    System.out.println(Sorts.sorted(Sorts.bubbleSort(RandomtoArray(50))));
-    System.out.println(Sorts.sorted(Sorts.bubbleSort(RandomtoArray(0))));
-    System.out.println(Sorts.sorted(Sorts.bubbleSort(RandomtoArray(1))));
-    System.out.println(Sorts.sorted(Sorts.bubbleSort(RandomtoArray(25))));
-    System.out.println(Sorts.sorted(Sorts.bubbleSort(RandomtoArray(2))));
+    System.out.println(Sorts.sorted(Sorts.insertionSort(RandomtoArray(10))));
+    System.out.println(Sorts.sorted(Sorts.insertionSort(RandomtoArray(50))));
+    System.out.println(Sorts.sorted(Sorts.insertionSort(RandomtoArray(0))));
+    System.out.println(Sorts.sorted(Sorts.insertionSort(RandomtoArray(1))));
+    System.out.println(Sorts.sorted(Sorts.insertionSort(RandomtoArray(25))));
+    System.out.println(Sorts.sorted(Sorts.insertionSort(RandomtoArray(2))));
   }
   public static int[] RandomtoArray(int length){
     int seednum = ThreadLocalRandom.current().nextInt();

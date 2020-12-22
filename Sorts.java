@@ -1,26 +1,25 @@
 import java.util.Random;
 public class Sorts{
   public static void main(String args[]){
-    int[] a = new int[]{1, 13, 12, 0, 1};
-    int[] b = new int[]{6, 7, 5, 4, 8, 0};
-    System.out.println(toString(insertionSort(a)));
   }
   public static int[] insertionSort(int[] data){
-    int last = 0;
-    for(int j = 0; j < data.length - 1; j ++){
-      for(int i = last; i >= 0; i --){
-        if(data[last + 1] >= data[last]){
+    for(int j = 1; j < data.length; j ++){
+      int moving = data[j];
+      for(int i = j - 1; i >= 0; i --){
+        if(moving < data[i]){
+          data[i + 1] = data[i];
+        }else{
+          data[i + 1] = moving;
           break;
         }
-        else if(data[last + 1] >= data[i]){
-          data = addAtIndex(data, data[last + 1], i + 1, last + 1);
-          break;
+        if(i == 0 && moving < data[i]){
+          data[i] = moving;
         }
-      } last ++;
-      System.out.print("Array: ");
-      System.out.println(toString(data));
-    }return(data);
+      }
+    }
+    return(data);
   }
+
 
   public static int[] addAtIndex(int[] data, int element, int index, int oldindex){
     if(index == 0){
