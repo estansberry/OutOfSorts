@@ -1,13 +1,13 @@
 import java.util.Random;
 public class Sorts{
   public static void main(String args[]){
-    int[] a = new int[]{1, 3, 2, 8, 1};
+    int[] a = new int[]{1, 13, 12, 0, 1};
     int[] b = new int[]{6, 7, 5, 4, 8, 0};
     System.out.println(toString(insertionSort(a)));
   }
   public static int[] insertionSort(int[] data){
     int last = 0;
-    for(int j = 0; j < data.length; j ++){
+    for(int j = 0; j < data.length - 1; j ++){
       for(int i = last; i >= 0; i --){
         if(data[last + 1] >= data[last]){
           break;
@@ -17,6 +17,8 @@ public class Sorts{
           break;
         }
       } last ++;
+      System.out.print("Array: ");
+      System.out.println(toString(data));
     }return(data);
   }
 
